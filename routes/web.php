@@ -11,8 +11,24 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/index', 'HomeController@index');
 
 Route::get('/register', 'AuthController@register');
 
 Route::post('/selamatdatang', 'AuthController@Test');
+
+Route::get('/master', function() {
+    return view('adminlte.master');
+});
+
+Route::get('/', function() {
+    return view('items.index');
+});
+
+Route::get('/data-tables', function() {
+    return view('items.data-tables');
+});
+
+Route::get('/items/create', function() {
+    return view('items.create');
+});
